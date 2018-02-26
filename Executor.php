@@ -7,12 +7,11 @@ use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 class Executor implements ExecutorInterface
 {
-    public const CONTEXT_EXECUTABLES_IDS = 'executables';
-
     /**
      * @var DependentExecutableIteratorInterface
      */
     private $iterator;
+    
     /**
      * @var null|EventDispatcherInterface
      */
@@ -33,13 +32,12 @@ class Executor implements ExecutorInterface
     /**
      * {@inheritdoc}
      */
-    public function execute(array $context = []): \Iterator
+    public function execute(array $context = [], array $executables = []): \Iterator
     {
         $this->dispatchIfPossible(Events::EXECUTOR_BEGIN, $this->createExecutorEvent($context));
 
-        $executableIds = $context[self::CONTEXT_EXECUTABLES_IDS] ?? [];
-        $executables = $this->iterator->getDependenciesIterator($executableIds);
-        foreach ($executables as $executable) {
+        $iterator = $this->iterator->getDependenciesIterator($executables);
+        foreach ($iterator as $executable) {
             yield $executable->execute($context);
         }
 
