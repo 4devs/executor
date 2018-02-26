@@ -1,0 +1,37 @@
+{
+  "name": "fdevs/executor",
+  "type": "library",
+  "description": "FDevs Executor Component",
+  "keywords": [],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Konstantin Vytyagov",
+      "email": "vytyagov.k@gmail.com"
+    },
+    {
+      "name": "4devs Community",
+      "homepage": "https://github.com/4devs/executor/contributors"
+    }
+  ],
+  "require": {
+    "php": "^7.1",
+    "symfony/event-dispatcher": "^4.0",
+    "symfony/dependency-injection": "^4.0"
+  },
+  "require-dev": {
+    "friendsofphp/php-cs-fixer": "^2.10"
+  },
+  "config":{
+    "bin-dir": "bin",
+    "sort-packages": true
+  },
+  "autoload": {
+    "psr-4": {
+      "FDevs\\Executor\\": ""
+    },
+    "exclude-from-classmap": [
+      "/Tests/"
+    ]
+  }
+}
