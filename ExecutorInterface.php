@@ -10,12 +10,13 @@ interface ExecutorInterface
 {
     /**
      * @param array $context
+     * @param array $executables    Executable identifiers to execute
      *
      * @throws CircularDependencyException
      * @throws ExecutableNotFoundException
      * @throws RuntimeException
      *
-     * @return \Iterator    Iterator of FDevs\Executor\ResultInterface
+     * @return \Iterator|ResultInterface[]    Iterator of FDevs\Executor\ResultInterface
      */
-    public function execute(array $context = []): \Iterator;
+    public function execute(array $context = [], array $executables = []): \Iterator;
 }
