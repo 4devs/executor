@@ -2,12 +2,12 @@
 
 namespace FDevs\Executor;
 
+use FDevs\Container\ServiceLocator;
 use FDevs\Executor\Exception\CircularDependencyException;
 use FDevs\Executor\Exception\ExecutableNotFoundException;
 use FDevs\Executor\Exception\RuntimeException;
 use Psr\Container\ContainerExceptionInterface;
 use Psr\Container\NotFoundExceptionInterface;
-use Symfony\Component\DependencyInjection\ServiceLocator;
 
 class DependentExecutableIterator extends ServiceLocator implements DependentExecutableIteratorInterface
 {

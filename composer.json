@@ -18,11 +18,11 @@
     "php": "^7.1"
   },
   "require-dev": {
-    "friendsofphp/php-cs-fixer": "^2.10",
-    "symfony/dependency-injection": "^3.4 | ^4.0"
+    "fdevs/container": "^0.1.0",
+    "friendsofphp/php-cs-fixer": "^2.10"
   },
   "suggest": {
-    "symfony/dependency-injection": "Allow to use FDevs\\Executor\\DependentExecutableIterator implementation"
+    "fdevs/container": "use service locator"
   },
   "config":{
     "bin-dir": "bin",
