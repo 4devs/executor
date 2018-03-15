@@ -24,12 +24,12 @@ class DependentExecutableIterator extends ServiceLocator implements DependentExe
     /**
      * ExecutableIterator constructor.
      *
-     * @param callable[] $executables
+     * @param callable[] $factories
      */
-    public function __construct(array $executables)
+    public function __construct(array $factories = [])
     {
-        parent::__construct($executables);
-        $this->executableIds = \array_keys($executables);
+        parent::__construct($factories);
+        $this->executableIds = \array_keys($factories);
     }
 
     /**
