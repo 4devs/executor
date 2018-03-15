@@ -5,9 +5,9 @@ namespace FDevs\Executor;
 interface ExecutableInterface
 {
     /**
-     * @param array $context
+     * @param ContextInterface $context
      *
      * @return ResultInterface
      */
-    public function execute(array $context = []): ResultInterface;
+    public function execute(ContextInterface $context): ResultInterface;
 }
