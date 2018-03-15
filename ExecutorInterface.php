@@ -9,7 +9,7 @@ use FDevs\Executor\Exception\RuntimeException;
 interface ExecutorInterface
 {
     /**
-     * @param array $context
+     * @param ContextInterface $context
      * @param array $executables    Executable identifiers to execute
      *
      * @throws CircularDependencyException
@@ -18,5 +18,5 @@ interface ExecutorInterface
      *
      * @return \Iterator|ResultInterface[]    Iterator of FDevs\Executor\ResultInterface
      */
-    public function execute(array $context = [], array $executables = []): \Iterator;
+    public function execute(ContextInterface $context, array $executables = []): \Iterator;
 }

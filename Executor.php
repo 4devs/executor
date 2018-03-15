@@ -22,7 +22,7 @@ class Executor implements ExecutorInterface
     /**
      * {@inheritdoc}
      */
-    public function execute(array $context = [], array $executables = []): \Iterator
+    public function execute(ContextInterface $context, array $executables = []): \Iterator
     {
         $iterator = $this->iterator->getDependenciesIterator($executables);
         foreach ($iterator as $executable) {
